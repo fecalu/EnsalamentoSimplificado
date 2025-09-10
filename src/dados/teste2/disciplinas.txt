@@ -1,0 +1,15 @@
+Fundamentos de Programação;60;true;6
+Estruturas de Dados;75;true;6
+Algoritmos Genéticos;45;true;4
+Banco de Dados;60;true;6
+Redes de Computadores;60;true;6
+Inteligência Artificial;75;true;6
+Sistemas Operacionais;60;true;6
+Engenharia de Software;75;true;6
+Computação Gráfica;45;true;4
+Segurança da Informação;60;true;6
+Machine Learning;75;true;6
+Big Data Analytics;60;true;6
+Internet das Coisas;45;true;4
+Desenvolvimento Web;60;true;6
+Mobile Development;60;true;6
