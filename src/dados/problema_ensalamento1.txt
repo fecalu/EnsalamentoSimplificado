@@ -1,0 +1,12 @@
+disciplinas:4
+Adm De Dados;25;true;4
+Empreendedorismo;30;true;2
+Arq OO;20;true;2
+Gestao De Conhecimento;30;true;2
+professores:4
+Alysson;1:0,1,2,3
+Roberto;2:0,1
+Ricardo;2:2,3
+Carlos;3:0,1
+salas:1
+Sala 1;30;true

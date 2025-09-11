@@ -1,17 +1,20 @@
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class EnsalamentoLeitor {
-    public static void main(String[] args) {
+    @SuppressWarnings("unchecked") //suprimir avisos de compilação. Não podem ser verificadas em tempo de compilação
+	public static void main(String[] args) {
         try {
-            List<Professor> professores = LeitorArquivos.lerProfessores("C:\\temp\\diario-teste-eclipse\\EnsalamentoAg\\src\\dados\\teste2\\professores.txt");
-            List<Sala> salas = LeitorArquivos.lerSalas("C:\\temp\\diario-teste-eclipse\\EnsalamentoAg\\src\\dados\\teste2\\salas.txt");
-            List<Disciplina> disciplinas = LeitorArquivos.lerDisciplinas("C:\\temp\\diario-teste-eclipse\\EnsalamentoAg\\src\\dados\\teste2\\disciplinas.txt");
+            Map<String, Object> dados = LeitorArquivos.lerProfessoresESalasEDisciplinas("C:\\temp\\diario-teste-eclipse\\EnsalamentoAg\\src\\dados\\problema_ensalamento1.txt");
+            //
+            List<Disciplina> disciplinas = (List<Disciplina>) dados.get("disciplinas");
+            List<Professor> professores = (List<Professor>) dados.get("professores");
+            List<Sala> salas = (List<Sala>) dados.get("salas");
+            //
+            int numHorarios = 4;  // Horários por dia
+            int numDias = 5;      // Segunda a sexta
 
-            int numHorarios = 4;
-            int numDias = 5;
-
+            // Inicializa o algoritmo genético
             AlgoritmoGenetico ag = new AlgoritmoGenetico(20, 0.15);
             ag.resolve(200, disciplinas, professores, salas, numHorarios, numDias);
 
