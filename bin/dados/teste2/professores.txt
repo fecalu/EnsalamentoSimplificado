@@ -1,0 +1,15 @@
+Ana Silva;1:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+Carlos Oliveira;2:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Maria Santos;3:0,1,2,3,4,5,6,7,8,9,10,11,12,13
+João Pereira;4:0,1,2,3,4,5,6,7,8,9,10,11
+Pedro Costa;5:0,1,2,3,4,5,6,7,8,9
+Laura Mendes;6:0,1,2,3,4,5,6,7,8
+Ricardo Alves;7:0,1,2,3,4,5,6,7
+Fernanda Lima;8:0,1,2,3,4,5,6
+Marcos Souza;9:0,1,2,3,4,5
+Patrícia Rocha;10:0,1,2,3,4
+Bruno Carvalho;11:0,1,2,3
+Camila Dias;12:0,1,2
+Daniel Martins;13:0,1
+Juliana Ferreira;14:0
+Roberto Silva;15:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19

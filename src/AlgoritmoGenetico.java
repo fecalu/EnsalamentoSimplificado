@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.Temporal;
@@ -98,9 +100,11 @@ class AlgoritmoGenetico {
         // Calcula a duração entre o tempo inicial e o tempo final
         Duration duracao = Duration.between(agora, tempoFinal);
 
+		double tempoQuebrado = duracao.toMillis() / 1000.0;
+
         // Exibe a duração total de execução em milissegundos
-        System.out.println("Duração: " + duracao.toMillis() + " ms");
-        System.out.println("Duração em nanossegundos: " + duracao.getNano() + " ns");
+        System.out.println("Duração: " + duracao.getSeconds() + " segundos");
+        System.out.println("Duração em segundos quebrados: " + BigDecimal.valueOf(tempoQuebrado).setScale(2, RoundingMode.HALF_UP) + " segundos");
 	}
 
 	private void inicializaPopulacao(int totalAulas, List<Disciplina> disciplinas, List<Sala> salas) {

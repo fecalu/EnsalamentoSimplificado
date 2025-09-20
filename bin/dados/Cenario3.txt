@@ -1,0 +1,116 @@
+disciplinas:50
+Sistemas de Informacao;1;Programacao I;60;true;4;Guido Rossum
+Sistemas de Informacao;1;Logica de Programacao;60;false;2;Edsger Dijkstra
+Sistemas de Informacao;3;Banco de Dados;50;true;4;Edgar Codd
+Sistemas de Informacao;3;Estrutura de Dados II;50;true;4;Robert Sedgewick
+Sistemas de Informacao;5;Engenharia de Software II;40;false;4;Kent Beck
+Sistemas de Informacao;5;Redes II;40;true;2;Radia Perlman
+Direito;1;Introducao ao Direito;80;false;4;Hans Kelsen
+Direito;1;Sociologia Juridica;80;false;2;Emile Durkheim
+Direito;3;Direito Penal II;70;false;4;Claus Roxin
+Direito;3;Direito Civil II;70;false;2;Orlando Gomes
+Direito;5;Processo Penal;60;false;4;Guilherme de Souza Nucci
+Direito;5;Direito Internacional;60;false;2;Celso de Mello
+Enfermagem;1;Anatomia Aplicada;70;false;4;Florence Nightingale
+Enfermagem;1;Fundamentos de Enfermagem;70;false;4;Wanda Horta
+Enfermagem;3;Saude do Adulto;60;false;4;Anna Nery
+Enfermagem;3;Farmacologia Aplicada;60;true;2;Alexander Fleming
+Enfermagem;5;Saude Coletiva;50;false;4;Sergio Arouca
+Enfermagem;5;Gestao em Saude;50;false;2;Henry Mintzberg
+Letras;1;Teoria da Literatura;50;false;4;Terry Eagleton
+Letras;1;Linguistica I;50;false;2;Ferdinand de Saussure
+Letras;3;Literatura Brasileira;40;false;4;Antonio Candido
+Letras;3;Sintaxe do Portugues;40;false;2;Celso Cunha
+Letras;5;Literatura Inglesa;35;false;4;William Shakespeare
+Letras;5;Filologia Romanica;35;false;2;Wilhelm Meyer-Lubke
+Ciencias Contabeis;1;Contabilidade Introdutoria;70;true;4;Luca Pacioli
+Ciencias Contabeis;1;Administracao Basica;70;false;2;Jules Fayol
+Ciencias Contabeis;3;Contabilidade de Custos;60;true;4;Charles Horngren
+Ciencias Contabeis;3;Matematica Financeira;60;true;2;Richard Witt
+Ciencias Contabeis;5;Auditoria Contabil;50;true;4;Lawrence Sawyer
+Ciencias Contabeis;5;Pericia Contabil;50;true;2;Alvísio de Jesus
+Pedagogia;1;Historia da Educacao;80;false;4;Anisio Teixeira
+Pedagogia;1;Didatica;80;false;2;Jean-Jacques Rousseau
+Pedagogia;3;Psicologia da Educacao;70;false;4;Lev Vygotsky
+Pedagogia;3;Alfabetizacao e Letramento;70;false;2;Emilia Ferreiro
+Pedagogia;5;Educacao Inclusiva;60;false;4;Maria Teresa Mantoan
+Pedagogia;5;Politicas Educacionais;60;false;2;Dermeval Saviani
+Educacao Fisica;1;Bases Biologicas;60;false;4;Archibald Hill
+Educacao Fisica;1;Historia da Ed. Fisica;60;false;2;Pierre de Coubertin
+Educacao Fisica;3;Cinesiologia;50;false;4;Aristoteles
+Educacao Fisica;3;Aprendizagem Motora;50;true;2;Franklin Henry
+Educacao Fisica;5;Treinamento Desportivo;40;false;4;Tudor Bompa
+Educacao Fisica;5;Fisiologia do Exercicio;40;true;2;August Krogh
+Turismo;1;Introducao ao Turismo;50;false;4;Jafar Jafari
+Turismo;1;Geografia do Turismo;50;false;2;Milton Santos
+Turismo;3;Planejamento Turistico;40;false;4;Mario Beni
+Turismo;3;Hotelaria;40;true;2;Cesar Ritz
+Turismo;5;Eventos;35;false;4;Joe Goldblatt
+Turismo;5;Marketing Turistico;35;true;2;Philip Kotler
+
+professores:40
+Guido Rossum;0:2,3;1:2,3
+Edsger Dijkstra;2:2;3:2
+Edgar Codd;4:2,3;0:2,3
+Robert Sedgewick;1:2,3;2:2,3
+Kent Beck;3:2,3;4:2,3
+Radia Perlman;0:2;1:2
+Hans Kelsen;2:2,3;3:2,3
+Emile Durkheim;4:2;0:3
+Claus Roxin;1:2,3;2:2,3
+Orlando Gomes;3:3;4:3
+Guilherme de Souza Nucci;0:2,3;1:2,3
+Celso de Mello;2:3;3:3
+Florence Nightingale;0:0,1;1:0,1
+Wanda Horta;4:2,3;0:2,3
+Anna Nery;1:2,3;2:2,3
+Alexander Fleming;3:2;4:2
+Sergio Arouca;0:2,3;1:2,3
+Henry Mintzberg;2:2;3:2
+Terry Eagleton;4:2,3;0:2,3
+Ferdinand de Saussure;1:3;2:3
+Antonio Candido;3:2,3;4:2,3
+Celso Cunha;0:3;1:3
+William Shakespeare;2:2,3;3:2,3
+Wilhelm Meyer-Lubke;4:3;0:3
+Luca Pacioli;0:0,1;1:0,1
+Jules Fayol;2:2;3:2
+Charles Horngren;4:2,3;0:2,3
+Richard Witt;1:2;2:2
+Lawrence Sawyer;3:2,3;4:2,3
+Alvísio de Jesus;0:2;1:2
+Anisio Teixeira;2:2,3;3:2,3
+Jean-Jacques Rousseau;4:3;0:3
+Lev Vygotsky;1:2,3;2:2,3
+Emilia Ferreiro;3:2;4:2
+Maria Teresa Mantoan;0:2,3;1:2,3
+Dermeval Saviani;2:3;3:3
+Archibald Hill;4:2,3;0:2,3
+Pierre de Coubertin;1:2;2:2
+Aristoteles;3:2,3;4:2,3
+Franklin Henry;0:3;1:3
+Tudor Bompa;2:2,3;3:2,3
+August Krogh;4:2;0:2
+Jafar Jafari;1:2,3;2:2,3
+Milton Santos;3:3;4:3
+Mario Beni;0:2,3;1:2,3
+Cesar Ritz;2:2;3:2
+Joe Goldblatt;4:2,3;0:2,3
+Philip Kotler;1:3;2:3
+
+salas:15
+Lab Info I;60;true
+Lab Info II;60;true
+Lab Saude;60;true
+Lab Contabil;70;true
+Sala 101;85;false
+Sala 102;85;false
+Sala 103;85;false
+Sala 201;75;false
+Sala 202;75;false
+Sala 203;75;false
+Sala 301;50;false
+Sala 302;50;false
+Sala 401;40;true
+Sala 402;40;true
+Mini Auditório;90;false

@@ -9,7 +9,7 @@ public class EnsalamentoLeitor {
         try {
 
             Map<String, Object> dados = LeitorArquivos.lerProfessoresESalasEDisciplinas(
-                "C:\\temp\\diario-teste-eclipse\\EnsalamentoAg\\src\\dados\\Cenario5.txt"
+                "C:\\Users\\Marcos Andre\\Documents\\AlgoritmosGeneticos\\EnsalamentoSimplificado\\src\\dados\\Cenario1.txt"
             );
             List<Disciplina> disciplinas = (List<Disciplina>) dados.get("disciplinas");
             List<Professor> professores = (List<Professor>) dados.get("professores");

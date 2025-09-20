@@ -1,0 +1,4 @@
+Adm De Dados;25;true;4
+Empreendedorismo;30;true;2
+Arq OO;20;true;2
+Gestao De Conhecimento;30;true;2

@@ -1,0 +1,80 @@
+disciplinas:15
+Ciencia da Computacao;1;Introducao a Algoritmos;50;true;2;Grace Hopper
+Sistemas de Informacao;1;Fundamentos de Redes;50;true;2;Vint Cerf
+Engenharia de Software;1;Paradigmas de Programacao;50;true;2;Bjarne Stroustrup
+Direito;1;Teoria Geral do Direito;50;true;2;Norberto Bobbio
+Relacoes Internacionais;1;Teoria das Relacoes Internacionais;50;true;2;Kenneth Waltz
+Administracao;1;Principios de Gestao;50;true;2;Henri Fayol
+Economia;1;Fundamentos da Microeconomia;50;true;2;Adam Smith
+Psicologia;1;Bases da Psicologia Comportamental;50;true;2;B. F. Skinner
+Medicina;1;Introducao a Anatomia Humana;50;true;2;Andreas Vesalius
+Jornalismo;1;Teorias da Comunicacao;50;true;2;Marshall McLuhan
+Arquitetura;1;Historia da Arquitetura;50;true;2;Vitravius
+Fisica;1;Principios de Mecanica Classica;50;true;2;Isaac Newton
+Quimica;1;Quimica Geral e Inorganica;50;true;2;Antoine Lavoisier
+Biologia;1;Biologia Celular e Molecular;50;true;2;George Emil Palade
+Historia;1;Introducao aos Estudos Historicos;50;true;2;Marc Bloch
+
+professores:30
+Grace Hopper;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Vint Cerf;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Bjarne Stroustrup;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Norberto Bobbio;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Kenneth Waltz;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Henri Fayol;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Adam Smith;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+B. F. Skinner;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Andreas Vesalius;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Marshall McLuhan;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Vitravius;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Isaac Newton;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Antoine Lavoisier;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+George Emil Palade;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Marc Bloch;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Ada Lovelace;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Alan Turing;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Marie Curie;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Carl Sagan;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Noam Chomsky;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Simone de Beauvoir;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Milton Friedman;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Carl Jung;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Stephen Hawking;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Richard Feynman;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Rosalind Franklin;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Max Weber;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+John Locke;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+Hannah Arendt;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+J. R. R. Tolkien;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+
+salas:30
+Sala Multiuso Apolo;100;true
+Sala Multiuso Artemis;100;true
+Sala Multiuso Hermes;100;true
+Sala Multiuso Atena;100;true
+Sala Multiuso Zeus;100;true
+Sala Multiuso Hera;100;true
+Sala Multiuso Poseidon;100;true
+Sala Multiuso Hades;100;true
+Sala Multiuso Hestia;100;true
+Sala Multiuso Demeter;100;true
+Sala Multiuso Ares;100;true
+Sala Multiuso Hefesto;100;true
+Sala Multiuso Dionisio;100;true
+Sala Multiuso Afrodite;100;true
+Sala Multiuso Eros;100;true
+Laboratorio Turing;100;true
+Laboratorio Lovelace;100;true
+Laboratorio Newton;100;true
+Laboratorio Einstein;100;true
+Laboratorio Curie;100;true
+Laboratorio Galileu;100;true
+Laboratorio Kepler;100;true
+Laboratorio Copernicus;100;true
+Laboratorio Da Vinci;100;true
+Laboratorio Franklin;100;true
+Auditorio Platão;100;true
+Auditorio Socrates;100;true
+Auditorio Aristoteles;100;true
+Auditorio Hipatia;100;true
+Auditorio Sêneca;100;true
