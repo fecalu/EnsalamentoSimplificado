@@ -1,0 +1,126 @@
+disciplinas:60
+Engenharia de Software;3;Estatistica Aplicada;60;true;4;Carl Gauss
+Engenharia de Software;5;Gestao de Projetos;50;true;2;Henry Gantt
+Engenharia de Software;7;Economia de Software;40;false;2;Barry Boehm
+Ciencia da Computacao;3;Probabilidade e Estatistica;70;true;4;Carl Gauss
+Ciencia da Computacao;5;Pesquisa Operacional;60;true;2;George Dantzig
+Ciencia da Computacao;7;Topicos em IA;50;true;2;Judea Pearl
+Direito;3;Direito e Economia;80;false;2;Richard Posner
+Direito;5;Sociologia Juridica;70;false;2;Max Weber
+Direito;7;Filosofia do Direito;60;false;2;Ronald Dworkin
+Medicina;2;Bioestatistica;90;true;4;Carl Gauss
+Medicina;4;Etica Medica;80;false;2;Thomas Beauchamp
+Medicina;6;Saude Publica;70;false;2;Carlos Chagas
+Psicologia;2;Estatistica para Psicologia;70;true;4;Carl Gauss
+Psicologia;4;Psicologia Social;60;false;2;Solomon Asch
+Psicologia;6;Etica Profissional;50;false;2;Thomas Beauchamp
+Administracao;2;Estatistica para Negocios;80;true;4;Carl Gauss
+Administracao;4;Gestao de Projetos;70;true;2;Henry Gantt
+Administracao;6;Logistica;60;false;2;Eiji Toyoda
+Economia;2;Microeconomia I;70;false;4;Adam Smith
+Economia;2;Estatistica Economica;70;true;4;Carl Gauss
+Economia;4;Econometria;60;true;4;Ragnar Frisch
+Economia;6;Economia do Setor Publico;50;false;2;Richard Musgrave
+Engenharia de Producao;3;Pesquisa Operacional;60;true;2;George Dantzig
+Engenharia de Producao;5;Gestao de Projetos;50;true;2;Henry Gantt
+Engenharia de Producao;7;Engenharia Economica;40;false;2;Eugene Grant
+Fisica;2;Metodos Matematicos I;50;false;4;Joseph Fourier
+Fisica;4;Mecanica Estatistica;40;false;4;Ludwig Boltzmann
+Fisica;6;Cosmologia;30;false;2;Stephen Hawking
+Matematica;2;Calculo Vetorial;60;false;4;Joseph-Louis Lagrange
+Matematica;4;Algebra Linear;50;false;4;David Poole
+Matematica;6;Teoria dos Numeros;40;false;2;Pierre de Fermat
+Quimica;2;Fisico-Quimica I;60;true;4;Peter Atkins
+Quimica;4;Quimica Quantica;50;true;4;Linus Pauling
+Quimica;6;Quimica Inorganica;40;true;2;Alfred Werner
+Biologia;2;Bioestatistica;70;true;4;Carl Gauss
+Biologia;4;Genetica;60;true;4;Gregor Mendel
+Biologia;6;Ecologia de Populacoes;50;false;2;Eugene Odum
+Historia;2;Historia Antiga;80;false;4;Mary Beard
+Historia;4;Historia Medieval;70;false;2;Jacques Le Goff
+Historia;6;Historia Contemporanea;60;false;2;Eric Hobsbawm
+Geografia;2;Geografia da Populacao;70;false;2;Paul Vidal de la Blache
+Geografia;4;Geopolitica;60;false;4;Halford Mackinder
+Geografia;6;Planejamento Urbano;50;true;2;Jane Jacobs
+Filosofia;2;Logica I;50;false;4;Aristoteles
+Filosofia;4;Etica;50;false;2;Thomas Beauchamp
+Filosofia;6;Filosofia da Ciencia;40;false;2;Karl Popper
+Servico Social;2;Sociologia Aplicada;60;false;2;Max Weber
+Servico Social;4;Direitos Humanos;50;false;2;Norberto Bobbio
+Servico Social;6;Politicas Sociais;40;false;2;Vicente de Paula Faleiros
+Nutricao;2;Bioquimica da Nutricao;60;true;4;Albert Lehninger
+Nutricao;4;Nutricao e Saude Publica;50;false;2;Carlos Chagas
+Nutricao;6;Tecnica Dietetica;40;true;2;Sonia Tucunduva
+Farmacia;3;Quimica Farmaceutica;50;true;4;Alfred Burger
+Farmacia;5;Farmacologia;40;false;4;Louis S. Goodman
+Farmacia;7;Deontologia Farmaceutica;30;false;2;Thomas Beauchamp
+Odontologia;2;Anatomia de Cabeca e Pescoco;60;false;4;Henry Gray
+Odontologia;4;Materiais Dentarios;50;true;2;Ralph W. Phillips
+Odontologia;6;Etica Odontologica;40;false;2;Thomas Beauchamp
+
+professores:40
+Carl Gauss;0:0,1;1:0,1;2:0,1;3:0,1;4:0,1
+Henry Gantt;0:2;1:2;2:2;3:2;4:2
+Barry Boehm;0:3;1:3
+George Dantzig;2:3;3:3;4:3
+Judea Pearl;0:0;1:0
+Richard Posner;2:0;3:0
+Max Weber;0:1;1:1;2:1
+Ronald Dworkin;3:1;4:1
+Thomas Beauchamp;0:2;1:2;2:2;3:2;4:2
+Carlos Chagas;0:3;1:3;2:3
+Solomon Asch;3:3;4:3
+Eiji Toyoda;0:0;1:0
+Adam Smith;2:0,1;3:0,1
+Ragnar Frisch;4:0,1;0:2,3
+Richard Musgrave;1:2;2:2
+Eugene Grant;3:2;4:2
+Joseph Fourier;0:0,1;1:0,1
+Ludwig Boltzmann;2:2,3;3:2,3
+Stephen Hawking;4:3;0:3
+Joseph-Louis Lagrange;1:2,3;2:0,1
+David Poole;3:0,1;4:0,1
+Pierre de Fermat;0:1;1:1
+Peter Atkins;2:2,3;3:2,3
+Linus Pauling;0:0,1;1:0,1
+Alfred Werner;4:2;0:2
+Gregor Mendel;2:0,1;3:0,1
+Eugene Odum;4:3;1:3
+Mary Beard;0:0,1;1:0,1
+Jacques Le Goff;2:2;3:2
+Eric Hobsbawm;4:2;0:2
+Paul Vidal de la Blache;1:2;2:3
+Halford Mackinder;3:0,1;4:0,1
+Jane Jacobs;0:3;1:3
+Aristoteles;2:0,1;3:0,1
+Karl Popper;4:0;0:0
+Norberto Bobbio;1:1;2:1
+Vicente de Paula Faleiros;3:1;4:1
+Albert Lehninger;0:2,3;1:2,3
+Sonia Tucunduva;2:3;3:3
+Alfred Burger;4:0,1;0:0,1
+Louis S. Goodman;1:0,1;2:0,1
+Ralph W. Phillips;3:2;4:2
+Henry Gray;0:2,3;1:2,3
+
+salas:20
+Lab Multi I;75;true
+Lab Multi II;75;true
+Lab Multi III;75;true
+Lab Multi IV;75;true
+Lab Espec I;50;true
+Lab Espec II;50;true
+Sala 101;95;false
+Sala 102;95;false
+Sala 103;85;false
+Sala 104;85;false
+Sala 201;75;false
+Sala 202;75;false
+Sala 203;65;false
+Sala 204;65;false
+Sala 301;55;false
+Sala 302;55;false
+Sala 401;45;false
+Sala 402;45;false
+Mini Auditório A;100;false
+Mini Auditório B;100;false

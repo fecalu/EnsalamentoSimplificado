@@ -1,0 +1,170 @@
+disciplinas:70
+Engenharia de Software;1;Introducao a Computacao;90;true;4;Ada Lovelace
+Engenharia de Software;1;Logica Matematica;90;false;4;George Boole
+Engenharia de Software;2;Algoritmos I;85;true;4;Donald Knuth
+Engenharia de Software;2;Estrutura de Dados;85;true;4;Niklaus Wirth
+Engenharia de Software;3;Engenharia de Software I;70;false;4;Ian Sommerville
+Engenharia de Software;3;Banco de Dados I;70;true;4;Edgar Codd
+Engenharia de Software;4;Sistemas Operacionais;60;true;4;Andrew Tanenbaum
+Engenharia de Software;4;Redes de Computadores;60;true;4;Vint Cerf
+Engenharia de Software;5;Inteligencia Artificial;50;true;3;John McCarthy
+Engenharia de Software;5;Compiladores;50;true;3;Alfred Aho
+Ciencia da Computacao;1;Calculo I;80;false;6;Isaac Newton
+Ciencia da Computacao;1;Geometria Analitica;80;false;4;Rene Descartes
+Ciencia da Computacao;2;Calculo II;75;false;6;Gottfried Leibniz
+Ciencia da Computacao;2;Fisica I;75;false;4;Galileu Galilei
+Ciencia da Computacao;3;Algoritmos II;65;true;4;Thomas Cormen
+Ciencia da Computacao;3;Arquitetura de Computadores;65;true;4;John von Neumann
+Ciencia da Computacao;4;Probabilidade e Estatistica;60;false;4;Carl Gauss
+Ciencia da Computacao;4;Teoria dos Grafos;60;false;2;Leonhard Euler
+Ciencia da Computacao;5;Aprendizado de Maquina;55;true;3;Geoffrey Hinton
+Ciencia da Computacao;5;Computacao Grafica;55;true;3;Ivan Sutherland
+Direito;1;Introducao ao Direito;100;false;4;Hans Kelsen
+Direito;1;Ciencia Politica;100;false;4;Nicolau Maquiavel
+Direito;2;Direito Constitucional I;95;false;4;Jose Afonso da Silva
+Direito;2;Direito Penal I;95;false;4;Cesare Beccaria
+Direito;3;Direito Civil I;80;false;4;Miguel Reale
+Direito;3;Direito Administrativo I;80;false;4;Celso Antonio Bandeira de Mello
+Direito;4;Processual Civil I;70;false;4;Enrico Tullio Liebman
+Direito;4;Direito do Trabalho I;70;false;2;Arnaldo Sussekind
+Direito;5;Direito Empresarial;60;false;3;Fabio Ulhoa Coelho
+Direito;5;Direitos Humanos;60;false;3;Norberto Bobbio
+Medicina;1;Anatomia Humana I;120;false;6;Andreas Vesalius
+Medicina;1;Biologia Celular;120;true;4;George Emil Palade
+Medicina;2;Fisiologia Humana I;110;false;6;Claude Bernard
+Medicina;2;Bioquimica;110;true;4;Carl Neuberg
+Medicina;3;Histologia;100;true;4;Marie Francois Xavier Bichat
+Medicina;3;Patologia Geral;100;false;4;Rudolf Virchow
+Medicina;4;Farmacologia;90;false;4;Oswald Schmiedeberg
+Medicina;4;Imunologia;90;true;2;Edward Jenner
+Medicina;5;Microbiologia;80;true;3;Louis Pasteur
+Medicina;5;Semiologia;80;false;3;Hippocrates
+Psicologia;1;Psicologia Geral I;80;false;4;Wilhelm Wundt
+Psicologia;1;Filosofia da Mente;80;false;2;John Searle
+Psicologia;2;Psicologia do Desenvolvimento;75;false;4;Jean Piaget
+Psicologia;2;Neurociencia Comportamental;75;true;4;Donald Hebb
+Psicologia;3;Teorias da Personalidade;70;false;4;Sigmund Freud
+Psicologia;3;Psicopatologia I;70;false;4;Karl Jaspers
+Psicologia;4;Psicologia Social;65;false;4;Kurt Lewin
+Psicologia;4;Avaliacao Psicologica;65;true;2;Hermann Rorschach
+Psicologia;5;Psicanalise;60;false;3;Jacques Lacan
+Psicologia;5;Terapia Cognitivo-Comportamental;60;false;3;Aaron Beck
+Administracao;1;Teoria Geral da Administracao;90;false;4;Peter Drucker
+Administracao;1;Contabilidade Geral;90;true;4;Luca Pacioli
+Administracao;2;Matematica Financeira;85;true;4;Richard Witt
+Administracao;2;Marketing I;85;false;4;Philip Kotler
+Administracao;3;Gestao de Pessoas;75;false;4;Idalberto Chiavenato
+Administracao;3;Administracao Financeira;75;true;4;Stephen Ross
+Administracao;4;Logistica;65;false;4;Eiji Toyoda
+Administracao;4;Pesquisa Operacional;65;true;2;George Dantzig
+Administracao;5;Planejamento Estrategico;60;false;3;Michael Porter
+Administracao;5;Gestao de Projetos;60;true;3;Henry Gantt
+Arquitetura;1;Desenho Tecnico;70;false;4;Gaspard Monge
+Arquitetura;1;Historia da Arte;70;false;2;Ernst Gombrich
+Arquitetura;2;Projeto Arquitetonico I;65;false;6;Le Corbusier
+Arquitetura;2;Maquetes e Modelos;65;false;4;Frank Gehry
+Arquitetura;3;Conforto Ambiental;60;true;4;Victor Olgyay
+Arquitetura;3;Sistemas Estruturais;60;false;4;Robert Maillart
+Arquitetura;4;Urbanismo I;55;false;4;Jane Jacobs
+Arquitetura;4;Paisagismo;55;false;2;Roberto Burle Marx
+Arquitetura;5;Gerenciamento de Obras;50;false;3;Frederick Taylor
+Arquitetura;5;Design de Interiores;50;true;3;Dorothy Draper
+
+professores:50
+Ada Lovelace;0:0,1;1:0,1
+George Boole;2:2,3;3:2,3
+Donald Knuth;0:2,3;4:0,1
+Niklaus Wirth;1:2,3;3:0,1
+Ian Sommerville;0:0,1;2:0,1
+Edgar Codd;1:0,1;3:2,3
+Andrew Tanenbaum;2:2,3;4:2,3
+Vint Cerf;0:2,3;3:0,1
+John McCarthy;1:0;2:1;4:0
+Alfred Aho;0:3;2:2;3:3
+Isaac Newton;0:0,1,2;1:0,1,2
+Rene Descartes;2:0,1;3:0,1
+Gottfried Leibniz;0:2,3;1:2,3;4:0,1
+Galileu Galilei;2:2,3;3:2,3
+Thomas Cormen;0:0,1;4:2,3
+John von Neumann;1:0,1;3:0,1
+Carl Gauss;0:2,3;2:0,1
+Leonhard Euler;1:2;3:3
+Geoffrey Hinton;2:0;3:1;4:2
+Ivan Sutherland;0:1;1:3;2:0
+Hans Kelsen;0:0,1;1:0,1
+Nicolau Maquiavel;2:2,3;3:2,3
+Jose Afonso da Silva;0:2,3;4:0,1
+Cesare Beccaria;1:2,3;3:0,1
+Miguel Reale;0:0,1;2:0,1
+Celso Antonio Bandeira de Mello;1:0,1;3:2,3
+Enrico Tullio Liebman;2:2,3;4:2,3
+Arnaldo Sussekind;0:2;3:0
+Fabio Ulhoa Coelho;1:1;2:2;4:3
+Norberto Bobbio;0:3;3:1;4:0
+Andreas Vesalius;0:0,1,2;1:0,1,2
+George Emil Palade;2:0,1;3:0,1
+Claude Bernard;0:2,3;1:2,3;4:2,3
+Carl Neuberg;2:2,3;3:2,3
+Marie Francois Xavier Bichat;0:0,1;4:0,1
+Rudolf Virchow;1:0,1;3:0,1
+Oswald Schmiedeberg;0:2,3;2:2,3
+Edward Jenner;1:2;3:3
+Louis Pasteur;2:0;3:1;4:2
+Hippocrates;0:1;1:3;2:0
+Wilhelm Wundt;0:0,1;1:0,1
+John Searle;2:2;3:3
+Jean Piaget;0:2,3;4:0,1
+Donald Hebb;1:2,3;3:0,1
+Sigmund Freud;0:0,1;2:0,1
+Karl Jaspers;1:0,1;3:2,3
+Kurt Lewin;2:2,3;4:2,3
+Hermann Rorschach;0:2;3:0
+Jacques Lacan;1:1;2:2;4:3
+Aaron Beck;0:3;3:1;4:0
+Peter Drucker;0:0,1;1:0,1
+Luca Pacioli;2:2,3;3:2,3
+Richard Witt;0:2,3;4:0,1
+Philip Kotler;1:2,3;3:0,1
+Idalberto Chiavenato;0:0,1;2:0,1
+Stephen Ross;1:0,1;3:2,3
+Eiji Toyoda;2:2,3;4:2,3
+George Dantzig;0:2;3:0
+Michael Porter;1:1;2:2;4:3
+Henry Gantt;0:3;3:1;4:0
+Gaspard Monge;0:0,1;1:0,1
+Ernst Gombrich;2:2;3:3
+Le Corbusier;0:2,3;1:2,3;4:0,1
+Frank Gehry;2:0,1;3:0,1
+Victor Olgyay;0:0,1;4:2,3
+Robert Maillart;1:0,1;3:2,3
+Jane Jacobs;2:2,3;4:0,1
+Roberto Burle Marx;0:2;3:0
+Frederick Taylor;1:1;2:2;4:3
+Dorothy Draper;0:3;3:1;4:0
+
+salas:25
+Lab Eng I;50;true
+Lab Eng II;50;true
+Lab Comp I;70;true
+Lab Comp II;70;true
+Lab Geral I;90;true
+Lab Geral II;90;true
+Lab Arq;60;true
+Lab Psi;70;true
+Lab Med I;120;true
+Lab Med II;100;true
+Sala 101;100;false
+Sala 102;100;false
+Sala 103;80;false
+Sala 104;80;false
+Sala 201;70;false
+Sala 202;70;false
+Sala 203;60;false
+Sala 204;60;false
+Sala 301;50;false
+Sala 302;50;false
+Anfiteatro A;150;false
+Anfiteatro B;150;false
+Auditorio Principal;200;false
+Mini Auditório I;90;false
+Mini Auditório II;90;false

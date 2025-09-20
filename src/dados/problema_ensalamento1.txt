@@ -1,12 +1,166 @@
-disciplinas:4
-Adm De Dados;25;true;4
-Empreendedorismo;30;true;2
-Arq OO;20;true;2
-Gestao De Conhecimento;30;true;2
-professores:4
-Alysson;1:0,1,2,3
-Roberto;2:0,1
-Ricardo;2:2,3
-Carlos;3:0,1
-salas:1
-Sala 1;30;true
+disciplinas:69
+Sistemas de Informacao;1;Programacao I;70;true;4;Guido Rossum
+Sistemas de Informacao;1;Calculo A;70;false;4;Leonhard Euler
+Sistemas de Informacao;1;Logica Digital;70;true;3;Claude Shannon
+Sistemas de Informacao;2;Estrutura de Dados I;60;true;4;Niklaus Wirth
+Sistemas de Informacao;2;Arquitetura de Computadores;60;true;4;John Neumann
+Sistemas de Informacao;3;Banco de Dados;50;true;4;Edgar Codd
+Sistemas de Informacao;3;Analise de Algoritmos;50;false;4;Donald Knuth
+Sistemas de Informacao;4;Sistemas Operacionais;45;true;4;Ken Thompson
+Sistemas de Informacao;4;Redes de Computadores;45;true;4;Vint Cerf
+Sistemas de Informacao;5;Inteligencia Artificial;40;true;4;Alan Turing
+Sistemas de Informacao;5;Engenharia de Software;40;false;4;Ian Sommerville
+Sistemas de Informacao;6;Computacao Grafica;35;true;3;Edwin Catmull
+Engenharia de Producao;1;Introducao a Engenharia;80;false;3;Henry Ford
+Engenharia de Producao;1;Quimica Geral;80;true;4;Marie Curie
+Engenharia de Producao;2;Desenho Tecnico;70;true;4;Gaspard Monge
+Engenharia de Producao;2;Fisica Experimental A;70;true;4;Galileu Galilei
+Engenharia de Producao;3;Mecanica dos Solidos;60;false;4;Stephen Timoshenko
+Engenharia de Producao;3;Termodinamica;60;true;4;James Watt
+Engenharia de Producao;4;Pesquisa Operacional;50;true;4;George Dantzig
+Engenharia de Producao;5;Controle de Producao;45;true;4;Taiichi Ohno
+Engenharia de Producao;5;Engenharia Economica;45;true;4;John Keynes
+Engenharia de Producao;6;Logistica;40;false;4;Edwards Deming
+Jornalismo;1;Teoria da Comunicacao;60;false;4;Marshall McLuhan
+Jornalismo;1;Redacao I;60;true;4;Joseph Pulitzer
+Jornalismo;2;Fotojornalismo;50;true;3;Robert Capa
+Jornalismo;2;Historia da Midia;50;false;3;Asa Briggs
+Jornalismo;3;Radiojornalismo;45;true;4;Guglielmo Marconi
+Jornalismo;4;Jornalismo Investigativo;45;false;3;Bob Woodward
+Medicina;1;Anatomia I;100;true;4;Andreas Vesalius
+Medicina;1;Biologia Molecular;100;true;4;James Watson
+Medicina;2;Fisiologia;90;true;4;Claude Bernard
+Medicina;2;Histologia e Embriologia;90;true;4;Santiago Cajal
+Medicina;3;Patologia;80;true;4;Rudolf Virchow
+Medicina;4;Farmacologia;70;false;4;Oswald Schmiedeberg
+Medicina;5;Semiologia;60;false;4;William Osler
+Psicologia;1;Bases da Psicologia;80;false;4;Wilhelm Wundt
+Psicologia;1;Neurociencia Comportamental;80;false;4;Ivan Pavlov
+Psicologia;2;Psicologia do Desenvolvimento;70;false;4;Jean Piaget
+Psicologia;2;Teorias da Personality;70;false;4;Sigmund Freud
+Psicologia;3;Psicopatologia;60;false;4;Carl Jung
+Psicologia;4;Psicologia Social;50;false;4;Kurt Lewin
+Design Grafico;1;Historia do Design;60;false;3;Walter Gropius
+Design Grafico;1;Desenho de Observacao;60;true;4;Albrecht Durer
+Design Grafico;2;Tipografia;50;true;4;Max Miedinger
+Design Grafico;2;Teoria da Cor;50;true;4;Johannes Itten
+Design Grafico;3;Design Editorial;45;true;4;Jan Tschichold
+Design Grafico;4;Design de Interface (UI);40;true;4;Alan Cooper
+Design Grafico;4;Experiencia do Usuario (UX);40;true;4;Don Norman
+Administracao;1;Teoria da Administracao;100;false;4;Peter Drucker
+Administracao;1;Contabilidade Introdutoria;100;true;4;Luca Pacioli
+Administracao;2;Gestao de Pessoas;90;false;4;Idalberto Chiavenato
+Administracao;3;Marketing Basico;80;false;4;Philip Kotler
+Administracao;4;Gestao Financeira;70;true;4;Stephen Ross
+Gastronomia;1;Tecnicas Basicas de Cozinha;30;true;4;Auguste Escoffier
+Gastronomia;1;Higiene de Alimentos;30;true;3;Louis Pasteur
+Gastronomia;2;Cozinha Internacional;25;true;4;Julia Child
+Gastronomia;3;Panificacao e Confeitaria;25;true;4;Gaston Lenotre
+Gastronomia;4;Gestao de Restaurantes;20;true;3;Cesar Ritz
+Disciplinas Comuns;1;Metodologia Cientifica;150;false;2;Karl Popper
+Disciplinas Comuns;1;Libras;150;false;2;Charles Epee
+Disciplinas Comuns;2;Estatistica Geral;120;true;4;Ronald Fisher
+Disciplinas Comuns;2;Filosofia e Etica;120;false;3;Socrates
+Disciplinas Comuns;3;Economia Basica;100;false;3;Adam Smith
+Disciplinas Comuns;3;Direitos Humanos;100;false;2;Eleanor Roosevelt
+Engenharia Civil;1;Calculo I;90;false;4;Leonhard Euler
+Engenharia Civil;2;Mecanica dos Fluidos;80;true;4;Blaise Pascal
+Engenharia Civil;3;Resistencia dos Materiais;70;false;4;Stephen Timoshenko
+Engenharia Civil;4;Estruturas de Concreto;60;false;4;Robert Maillart
+Engenharia Civil;5;Engenharia de Transportes;50;false;3;Isambard Brunel
+
+professores:68
+Guido Rossum;0:0,1;1:0,1;2:0,1
+Leonhard Euler;0:2,3;1:2,3;2:2,3
+Claude Shannon;3:0,1;4:0,1
+Niklaus Wirth;0:0,1;1:0,1;3:0,1
+John Neumann;2:0,1;3:0,1;4:0,1
+Edgar Codd;0:2,3;1:2,3;2:2,3
+Donald Knuth;3:2,3;4:2,3
+Ken Thompson;0:0,1;1:0,1;4:0,1
+Vint Cerf;0:2,3;1:2,3;2:2,3
+Alan Turing;3:0,1;4:0,1
+Ian Sommerville;0:0,1;1:0,1;2:0,1
+Edwin Catmull;3:2,3;4:2,3
+Henry Ford;0:0,1;1:0,1;2:0,1
+Marie Curie;3:2,3;4:2,3
+Gaspard Monge;0:2,3;1:2,3;2:2,3
+Galileu Galilei;3:0,1;4:0,1
+Stephen Timoshenko;0:0,1;1:0,1;2:0,1
+James Watt;3:2,3;4:2,3
+George Dantzig;0:2,3;1:2,3;2:2,3
+Taiichi Ohno;3:0,1;4:0,1
+John Keynes;0:0,1;1:0,1;2:0,1
+Edwards Deming;3:2,3;4:2,3
+Marshall McLuhan;0:0,1;1:0,1;2:0,1
+Joseph Pulitzer;3:2,3;4:2,3
+Robert Capa;0:2,3;1:2,3;2:2,3
+Asa Briggs;3:0,1;4:0,1
+Guglielmo Marconi;0:0,1;1:0,1;2:0,1
+Bob Woodward;3:2,3;4:2,3
+Andreas Vesalius;0:2,3;1:2,3;2:2,3
+James Watson;3:0,1;4:0,1
+Claude Bernard;0:0,1;1:0,1;2:0,1
+Santiago Cajal;3:2,3;4:2,3
+Rudolf Virchow;0:2,3;1:2,3;2:2,3
+Oswald Schmiedeberg;3:0,1;4:0,1
+William Osler;0:0,1;1:0,1;2:0,1
+Wilhelm Wundt;3:2,3;4:2,3
+Ivan Pavlov;0:2,3;1:2,3;2:2,3
+Jean Piaget;3:0,1;4:0,1
+Sigmund Freud;0:0,1;1:0,1;2:0,1
+Carl Jung;3:2,3;4:2,3
+Kurt Lewin;0:2,3;1:2,3;2:2,3
+Walter Gropius;3:0,1;4:0,1
+Albrecht Durer;0:0,1;1:0,1;2:0,1
+Max Miedinger;3:2,3;4:2,3
+Johannes Itten;0:2,3;1:2,3;2:2,3
+Jan Tschichold;3:0,1;4:0,1
+Alan Cooper;0:0,1;1:0,1;2:0,1
+Don Norman;3:2,3;4:2,3
+Peter Drucker;0:2,3;1:2,3;2:2,3
+Luca Pacioli;3:0,1;4:0,1
+Idalberto Chiavenato;0:0,1;1:0,1;2:0,1
+Philip Kotler;3:2,3;4:2,3
+Stephen Ross;0:2,3;1:2,3;2:2,3
+Auguste Escoffier;3:0,1;4:0,1
+Louis Pasteur;0:0,1;1:0,1;2:0,1
+Julia Child;3:2,3;4:2,3
+Gaston Lenotre;0:2,3;1:2,3;2:2,3
+Cesar Ritz;3:0,1;4:0,1
+Karl Popper;0:0;1:0;2:0;3:0;4:0
+Charles Epee;0:1;1:1;2:1;3:1;4:1
+Ronald Fisher;0:2;1:2;2:2;3:2;4:2
+Socrates;0:3;1:3;2:3;3:3;4:3
+Adam Smith;0:0,1;1:0,1;2:0,1;3:0,1;4:0,1
+Eleanor Roosevelt;0:2,3;1:2,3;2:2,3;3:2,3;4:2,3
+Blaise Pascal;0:0,1;1:0,1;2:0,1;3:0,1;4:0,1
+Robert Maillart;0:2,3;1:2,3;2:2,3;3:2,3;4:2,3
+Isambard Brunel;0:0,1,2,3;1:0,1,2,3;2:0,1,2,3;3:0,1,2,3;4:0,1,2,3
+
+salas:25
+Anfiteatro A;200;false
+Anfiteatro B;150;false
+Auditorio;120;false
+Lab de Informatica I;40;true
+Lab de Informatica II;40;true
+Lab de Informatica III;40;true
+Lab de Redes;35;true
+Lab de Quimica;30;true
+Lab de Fisica;30;true
+Lab de Anatomia;50;true
+Lab de Cinesiologia;50;true
+Lab de Engenharia;40;true
+Estudio de Fotografia;25;true
+Estudio de Radio e TV;30;true
+Cozinha Experimental A;20;true
+Atelie de Desenho;40;true
+Sala 101;100;false
+Sala 102;100;false
+Sala 201;80;false
+Sala 202;80;false
+Sala 301;70;false
+Sala 302;70;false
+Sala 401;60;false
+Sala 402;60;false
+Sala 501;50;false

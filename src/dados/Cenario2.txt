@@ -1,0 +1,94 @@
+disciplinas:40
+Engenharia de Software;1;Algoritmos I;120;true;4;Grace Hopper
+Engenharia de Software;3;Engenharia de Software Avancada;60;false;4;Martin Fowler
+Engenharia de Software;5;Sistemas Distribuidos;50;true;4;Leslie Lamport
+Engenharia de Software;7;Seguranca da Informacao;40;true;2;Bruce Schneier
+Ciencia da Computacao;1;Calculo I;120;false;6;Isaac Newton
+Ciencia da Computacao;3;Teoria da Computacao;60;false;4;Alan Turing
+Ciencia da Computacao;5;Redes Neurais;50;true;4;Yann LeCun
+Ciencia da Computacao;7;Computacao Quantica;30;true;2;Peter Shor
+Direito;1;Introducao ao Direito;150;false;4;Hans Kelsen
+Direito;1;Direito Romano;150;false;2;Justiniano I
+Direito;3;Direito Constitucional;130;false;4;Alexandre de Moraes
+Direito;5;Direito Tributario;80;false;4;Alfredo Augusto Becker
+Medicina;1;Anatomia I;160;false;6;Andreas Vesalius
+Medicina;1;Biologia Celular;160;true;4;George Emil Palade
+Medicina;3;Fisiologia;140;false;6;Claude Bernard
+Medicina;5;Farmacologia;120;true;4;Oswald Schmiedeberg
+Quimica;1;Quimica Geral;90;true;6;Marie Curie
+Quimica;3;Quimica Organica;70;true;4;Linus Pauling
+Quimica;5;Fisico-Quimica;50;true;4;Gilbert Lewis
+Quimica;7;Quimica Analitica;40;true;2;Fritz Pregl
+Fisica;1;Fisica Basica I;100;false;6;Albert Einstein
+Fisica;3;Mecanica Classica;80;false;4;Isaac Newton
+Fisica;5;Eletromagnetismo;60;true;4;James Clerk Maxwell
+Fisica;7;Fisica Moderna;50;false;2;Max Planck
+Engenharia Civil;1;Desenho Tecnico;110;false;4;Gaspard Monge
+Engenharia Civil;1;Introducao a Eng. Civil;110;false;2;John Smeaton
+Engenharia Civil;3;Resistencia dos Materiais;90;false;4;Stephen Timoshenko
+Engenharia Civil;5;Mecanica dos Solos;70;true;4;Karl von Terzaghi
+Engenharia Eletrica;1;Circuitos Eletricos I;100;true;4;Andre-Marie Ampere
+Engenharia Eletrica;3;Eletronica Analogica;80;true;4;Robert Widlar
+Engenharia Eletrica;5;Sistemas de Controle;60;true;4;Harold Black
+Engenharia Eletrica;7;Maquinas Eletricas;50;true;2;Nikola Tesla
+Jornalismo;1;Teoria da Comunicacao;130;false;4;Marshall McLuhan
+Jornalismo;1;Redacao Jornalistica;130;true;4;Joseph Pulitzer
+Jornalismo;3;Jornalismo Investigativo;80;true;4;Bob Woodward
+Jornalismo;5;Etica na Comunicacao;70;false;2;Walter Lippmann
+Administracao;1;Teoria Geral da Administracao;140;false;4;Peter Drucker
+Administracao;1;Contabilidade;140;true;4;Luca Pacioli
+Administracao;3;Gestao Financeira;100;true;4;Eugene Fama
+Administracao;5;Logistica Empresarial;80;false;2;Eiji Toyoda
+
+professores:30
+Grace Hopper;0:0,1
+Martin Fowler;1:2,3
+Leslie Lamport;0:2,3
+Bruce Schneier;1:0
+Isaac Newton;0:0,1,2;1:0,1,2
+Alan Turing;2:2,3
+Yann LeCun;3:0,1
+Peter Shor;2:0
+Hans Kelsen;0:0,1;1:0,1
+Justiniano I;2:2
+Alexandre de Moraes;3:2,3
+Alfredo Augusto Becker;4:0,1
+Andreas Vesalius;0:0,1,2;1:0,1,2
+George Emil Palade;2:0,1
+Claude Bernard;3:0,1,2;4:0,1,2
+Oswald Schmiedeberg;2:2,3
+Marie Curie;0:0,1,2
+Linus Pauling;1:2,3
+Gilbert Lewis;0:2,3
+Fritz Pregl;1:0
+Albert Einstein;2:0,1,2;3:0,1,2
+James Clerk Maxwell;4:0,1
+Max Planck;2:3
+Gaspard Monge;0:0,1
+John Smeaton;1:1
+Stephen Timoshenko;2:2,3
+Karl von Terzaghi;3:0,1
+Andre-Marie Ampere;4:2,3
+Robert Widlar;0:2,3
+Harold Black;1:0,1
+Nikola Tesla;2:1
+Marshall McLuhan;3:2,3
+Joseph Pulitzer;4:0,1
+Bob Woodward;0:0,1
+Walter Lippmann;1:3
+Peter Drucker;2:2,3;3:2,3
+Luca Pacioli;4:0,1
+Eugene Fama;0:2,3
+Eiji Toyoda;1:2
+
+salas:10
+Anfiteatro Principal;160;false
+Anfiteatro Secundario;120;false
+Lab de Quimica;80;true
+Lab de Informatica Avancado;50;true
+Lab de Informatica Basico;100;true
+Sala 101;90;false
+Sala 102;90;false
+Sala 201;70;false
+Sala 202;70;false
+Sala 301;40;true

@@ -1,124 +1,257 @@
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.Temporal;
 import java.util.*;
 
 class AlgoritmoGenetico {
-    private int tamanhoPopulacao;
-    private double taxaMutacao;
-    private List<Individuo> populacao;
-    private Individuo melhorSolucao;
+	private int tamanhoPopulacao;
+	private double taxaMutacao;
+	private List<Individuo> populacao;
+	private Individuo melhorSolucao;
 
-    private int numSalas, numHorarios, numDias;
+	private int numSalas, numHorarios, numDias;
 
-    public AlgoritmoGenetico(int tamanhoPopulacao, double taxaMutacao) {
-        this.tamanhoPopulacao = tamanhoPopulacao;
-        this.taxaMutacao = taxaMutacao;
-        this.populacao = new ArrayList<>();
-    }
-    
+	// cache pra fitness/impressão
+	private Map<String, Professor> profByName;
+	
+	private double taxaElitismo; // Variável para elitismo
 
 
-    public void resolve(int numeroGeracoes, List<Disciplina> disciplinas, List<Professor> professores, List<Sala> salas, int numHorarios, int numDias) {
-        this.numSalas = salas.size();
-        this.numHorarios = numHorarios;
-        this.numDias = numDias;
+	public AlgoritmoGenetico(int tamanhoPopulacao, double taxaMutacao, double taxaElitismo) {
+	    this.tamanhoPopulacao = tamanhoPopulacao;
+	    this.taxaMutacao = taxaMutacao;
+	    this.taxaElitismo = taxaElitismo; // Inicializando elitismo
+	    this.populacao = new ArrayList<>();
+	}
 
-        int totalAulas = 0;
-        for (Disciplina d : disciplinas) totalAulas += d.getNumeroAulasPorSemana();
+	
+	
+	
+	
+	public void resolve(int numeroGeracoes, List<Disciplina> disciplinas, List<Professor> professores, List<Sala> salas,
+		
+			int numHorarios, int numDias) {
+		
+		Instant agora = Instant.now();
+		
+		this.numSalas = salas.size();
+		this.numHorarios = numHorarios;
+		this.numDias = numDias;
 
-        
-        
-        //Soluções iniciais (indivíduos). Cada solução é uma tentativa de alocar as aulas nas salas com horários, baseado nas aulas e professores. 
-        //São soluções aleatórias no começo. Confira o método mais em baixo
-        
-        inicializaPopulacao(totalAulas, disciplinas, professores, salas);
+		// monta lookup de professores por nome
+		this.profByName = new HashMap<>();
+		for (Professor p : professores) {
+			this.profByName.put(p.getNome(), p);
+		}
+		
+		
+		
+		int totalAulas = 0;
+		for (Disciplina d : disciplinas)
+			totalAulas += d.getNumeroAulasPorSemana();
 
-        List<String> historico = new ArrayList<>();
+		inicializaPopulacao(totalAulas, disciplinas, salas);
 
-        for (int g = 0; g < numeroGeracoes; g++) {
-            List<Individuo> novaPopulacao = new ArrayList<>();
-            novaPopulacao.add(new Individuo(melhorSolucao)); // elitismo
+		List<String> historico = new ArrayList<>();
 
-            while (novaPopulacao.size() < tamanhoPopulacao) { // Aqui é tipo uma competição para escolher o melhor 
-                Individuo pai1 = torneio(); //Como se estivesse fazendo uma competição para escolher os melhores "candidatos". 
-                                            //Cada indivíduo "luta" contra outro para determinar quem vai passar para a próxima fase.
-                Individuo pai2 = torneio();
-                Individuo filho = crossover(pai1, pai2); //A cada geração, vai selecionar dois indivíduos (soluções) que vão "fazer cruzamento" para gerar um novo indivíduo.
-                mutacao(filho);
-                filho.calcularFitness(disciplinas, professores, salas);
-                novaPopulacao.add(filho);
-            }
+		 for (int g = 0; g < numeroGeracoes; g++) {
+		        List<Individuo> novaPopulacao = new ArrayList<>();
 
-            populacao = novaPopulacao;
-            populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
-            if (populacao.get(0).getFitness() < melhorSolucao.getFitness()) {
-                melhorSolucao = populacao.get(0);
-            }
+		        // Adiciona o elitismo: calcula o número de indivíduos elitistas com base na taxa
+		        int elitismoCount = (int) (tamanhoPopulacao * taxaElitismo);
+		        for (int i = 0; i < elitismoCount; i++) {
+		            novaPopulacao.add(new Individuo(populacao.get(i))); // Mantém as melhores soluções
+		        }
 
-            historico.add("Geração " + (g + 1) + ": Fitness: " + melhorSolucao.getFitness());
-        }
+		        // Preenche o restante da população
+		        while (novaPopulacao.size() < tamanhoPopulacao) {
+		            Individuo pai1 = torneio();
+		            Individuo pai2 = torneio();
+		            Individuo filho = crossover(pai1, pai2);
+		            mutacao(filho);
+		            filho.calcularFitness(disciplinas, profByName, salas);
+		            novaPopulacao.add(filho);
+		        }
 
-        System.out.println("Histórico das soluções:");
-        historico.forEach(System.out::println);
+		        // Atualiza a população com a nova geração
+		        populacao = novaPopulacao;
+		        populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
 
-        System.out.println("\nMelhor solução final encontrada:");
-        imprimirGrade(melhorSolucao, disciplinas, professores, salas);
-        System.out.println("Número de conflitos: " + melhorSolucao.getFitness());
-    }
+		        // Atualiza a melhor solução
+		        if (populacao.get(0).getFitness() < melhorSolucao.getFitness()) {
+		            melhorSolucao = populacao.get(0);
+		        }
 
-    private void inicializaPopulacao(int totalAulas, List<Disciplina> disciplinas, List<Professor> professores, List<Sala> salas) {
-        populacao.clear();
-        for (int i = 0; i < tamanhoPopulacao; i++) {
-            Individuo ind = new Individuo(totalAulas, numSalas, numHorarios, numDias);
-            ind.calcularFitness(disciplinas, professores, salas);
-            populacao.add(ind);
-        }
-        populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
-        melhorSolucao = populacao.get(0);
-    }
+		        historico.add("Geração " + (g + 1) + ": Fitness: " + melhorSolucao.getFitness());
+		    }
 
-    private Individuo torneio() {
-        Individuo i1 = populacao.get((int) (Math.random() * tamanhoPopulacao));
-        Individuo i2 = populacao.get((int) (Math.random() * tamanhoPopulacao));
-        return (i1.getFitness() <= i2.getFitness()) ? i1 : i2;
-    }
+		System.out.println("Histórico das soluções:");
+		historico.forEach(System.out::println);
 
-    private Individuo crossover(Individuo pai1, Individuo pai2) {
-        Individuo filho = new Individuo(pai1);
-        for (int i = 0; i < pai1.getSolucao().length; i++) {
-            if (Math.random() < 0.5) filho.getSolucao()[i] = pai2.getSolucao()[i];
-        }
-        return filho;
-    }
+		System.out.println("\nMelhor solução final encontrada:");
+		imprimirGrade(melhorSolucao, disciplinas, salas);
+		System.out.println("Número de conflitos: " + melhorSolucao.getFitness());
+		
+        // Captura o tempo final após a execução do algoritmo
+        Instant tempoFinal = Instant.now();
 
-    private void mutacao(Individuo ind) {
-        if (Math.random() < taxaMutacao) {
-            int pos = (int) (Math.random() * ind.getSolucao().length);
-            ind.getSolucao()[pos] = (int) (Math.random() * (numSalas * numDias * numHorarios));
-        }
-    }
+        // Calcula a duração entre o tempo inicial e o tempo final
+        Duration duracao = Duration.between(agora, tempoFinal);
 
-    private void imprimirGrade(Individuo ind, List<Disciplina> disciplinas, List<Professor> professores, List<Sala> salas) {
-        String[] dias = {"Segunda", "Terça", "Quarta", "Quinta", "Sexta"};
-        int aulaIndex = 0;
+        // Exibe a duração total de execução em milissegundos
+        System.out.println("Duração: " + duracao.toMillis() + " ms");
+        System.out.println("Duração em nanossegundos: " + duracao.getNano() + " ns");
+	}
 
-        for (int d = 0; d < disciplinas.size(); d++) {
-            Disciplina disc = disciplinas.get(d);
-            Professor prof = professores.get(d);
+	private void inicializaPopulacao(int totalAulas, List<Disciplina> disciplinas, List<Sala> salas) {
+		populacao.clear();
+		for (int i = 0; i < tamanhoPopulacao; i++) {
+			Individuo ind = new Individuo(totalAulas, numSalas, numHorarios, numDias);
+			ind.calcularFitness(disciplinas, profByName, salas);
+			populacao.add(ind);
+		}
+		populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
+		melhorSolucao = populacao.get(0);
+	}
 
-            for (int a = 0; a < disc.getNumeroAulasPorSemana(); a++) {
-                int codigo = ind.getSolucao()[aulaIndex];
-                int salaIndex = codigo / (numDias * numHorarios);
-                int resto = codigo % (numDias * numHorarios);
-                int diaIndex = resto / numHorarios;
-                int horarioIndex = resto % numHorarios;
+	private Individuo torneio() {
+		Individuo i1 = populacao.get((int) (Math.random() * tamanhoPopulacao));
+		Individuo i2 = populacao.get((int) (Math.random() * tamanhoPopulacao));
+		return (i1.getFitness() <= i2.getFitness()) ? i1 : i2;
+	}
 
-                System.out.println(dias[diaIndex] + " | Horário " + (horarioIndex + 1) + " | Disciplina: " + disc.getNome() +
-                        " | Professor: " + prof.getNome() + " | Sala: " + salas.get(salaIndex).getNome());
-                aulaIndex++;
-            }
-        }
-    }
-    
-    public Individuo getMelhorSolucao() {
-        return melhorSolucao;
-    }
+	private Individuo crossover(Individuo pai1, Individuo pai2) {
+		Individuo filho = new Individuo(pai1);
+		for (int i = 0; i < pai1.getSolucao().length; i++) {
+			if (Math.random() < 0.5)
+				filho.getSolucao()[i] = pai2.getSolucao()[i];
+		}
+		return filho;
+	}
+
+	private void mutacao(Individuo ind) {
+		if (Math.random() < taxaMutacao) {
+			int pos = (int) (Math.random() * ind.getSolucao().length);
+			ind.getSolucao()[pos] = (int) (Math.random() * (numSalas * numDias * numHorarios));
+		}
+	}
+
+	// Métodos auxiliares para repetição de caracteres e formatação de células
+	private String rep(String s, int n) {
+		StringBuilder b = new StringBuilder();
+		for (int i = 0; i < n; i++)
+			b.append(s);
+		return b.toString();
+	}
+
+	private String cell(String s, int w) { // corta e preenche à direita
+		if (s == null)
+			s = "";
+		if (s.length() > w)
+			return s.substring(0, w - 1) + "…";
+		return String.format("%-" + w + "s", s);
+	}
+
+	private void imprimirGrade(Individuo ind, List<Disciplina> disciplinas, List<Sala> salas) {
+		// --- configuração das colunas (ajuste se quiser) ---
+		int W_CURSO = 28, W_PERIODO = 8, W_DIA = 10, W_HOR = 10, W_DISC = 30, W_PROF = 22, W_SALA = 30;
+
+		boolean USE_ASCII = false; // mude pra true se o terminal não renderizar box-drawing
+		String H = USE_ASCII ? "-" : "─";
+		String V = USE_ASCII ? "|" : "│";
+		String TL = USE_ASCII ? "+" : "┌";
+		String TR = USE_ASCII ? "+" : "┐";
+		String BL = USE_ASCII ? "+" : "└";
+		String BR = USE_ASCII ? "+" : "┘";
+		String TJ = USE_ASCII ? "+" : "┬";
+		String MJ = USE_ASCII ? "+" : "┼";
+		String BJ = USE_ASCII ? "+" : "┴";
+
+		String[] dias = { "Segunda", "Terça", "Quarta", "Quinta", "Sexta" };
+
+		// --- cria estrutura para as linhas ---
+		class Row {
+			String curso, periodo, dia, horario, disciplina, professor, sala;
+
+			Row(String curso, int periodo, int diaIdx, int horIdx, String disc, String prof, String sala) {
+				this.curso = curso;
+				this.periodo = periodo + "ºP";
+				this.dia = dias[diaIdx];
+				this.horario = "Horário " + (horIdx + 1);
+				this.disciplina = disc;
+				this.professor = prof;
+				this.sala = sala;
+			}
+		}
+		List<Row> rows = new ArrayList<>();
+
+		int aulaIndex = 0;
+		for (Disciplina d : disciplinas) {
+			String profNome = d.getProfessorNome();
+			for (int a = 0; a < d.getNumeroAulasPorSemana(); a++) {
+				int codigo = ind.getSolucao()[aulaIndex];
+				int salaIndex = codigo / (numDias * numHorarios);
+				int resto = codigo % (numDias * numHorarios);
+				int diaIndex = resto / numHorarios;
+				int horarioIndex = resto % numHorarios;
+
+				String profBadge = profByName.containsKey(profNome) ? profNome : profNome + " *";
+				rows.add(new Row(d.getCurso(), d.getPeriodo(), diaIndex, horarioIndex, d.getNome(), profBadge,
+						salas.get(salaIndex).getNome()));
+				aulaIndex++;
+			}
+		}
+
+		// --- ordena as linhas: curso, período, dia, horário, disciplina ---
+		rows.sort(Comparator.comparing((Row r) -> r.curso).thenComparing(r -> r.periodo)
+				.thenComparing(r -> Arrays.asList(dias).indexOf(r.dia))
+				.thenComparing(r -> Integer.parseInt(r.horario.replaceAll("\\D+", "")))
+				.thenComparing(r -> r.disciplina));
+
+		// largura total
+		int total = 1 + 1 + W_CURSO + 1 + 1 + W_PERIODO + 1 + 1 + W_DIA + 1 + 1 + W_HOR + 1 + 1 + W_DISC + 1 + 1
+				+ W_PROF + 1 + 1 + W_SALA + 1;
+
+		// --- título ---
+		String titulo = "MELHOR SOLUÇÃO ENCONTRADA - ALOCAÇÃO DE AULAS";
+		int inner = total - 2;
+		int left = Math.max(0, (inner - titulo.length()) / 2);
+		int right = Math.max(0, inner - titulo.length() - left);
+		System.out.println(TL + rep(H, inner) + TR);
+		System.out.println(V + rep(" ", left) + titulo + rep(" ", right) + V);
+
+		// --- topo do cabeçalho ---
+		System.out.println(MJ + rep(H, W_CURSO + 2) + MJ + rep(H, W_PERIODO + 2) + MJ + rep(H, W_DIA + 2) + MJ
+				+ rep(H, W_HOR + 2) + MJ + rep(H, W_DISC + 2) + MJ + rep(H, W_PROF + 2) + MJ + rep(H, W_SALA + 2) + MJ);
+
+		// --- cabeçalho ---
+		System.out.println(V + " " + cell("CURSO", W_CURSO) + " " + V + " " + cell("PERÍODO", W_PERIODO) + " " + V + " "
+				+ cell("DIA", W_DIA) + " " + V + " " + cell("HORÁRIO", W_HOR) + " " + V + " "
+				+ cell("DISCIPLINA", W_DISC) + " " + V + " " + cell("PROFESSOR", W_PROF) + " " + V + " "
+				+ cell("SALA", W_SALA) + " " + V);
+
+		// --- separador entre cabeçalho e dados ---
+		System.out.println(MJ + rep(H, W_CURSO + 2) + TJ + rep(H, W_PERIODO + 2) + TJ + rep(H, W_DIA + 2) + TJ
+				+ rep(H, W_HOR + 2) + TJ + rep(H, W_DISC + 2) + TJ + rep(H, W_PROF + 2) + TJ + rep(H, W_SALA + 2) + MJ);
+
+		// --- linhas ---
+		for (Row r : rows) {
+			System.out.println(V + " " + cell(r.curso, W_CURSO) + " " + V + " " + cell(r.periodo, W_PERIODO) + " " + V
+					+ " " + cell(r.dia, W_DIA) + " " + V + " " + cell(r.horario, W_HOR) + " " + V + " "
+					+ cell(r.disciplina, W_DISC) + " " + V + " " + cell(r.professor, W_PROF) + " " + V + " "
+					+ cell(r.sala, W_SALA) + " " + V);
+		}
+
+		// --- base ---
+		System.out.println(BL + rep(H, inner) + BR);
+
+		// dica de legenda
+		if (rows.stream().anyMatch(r -> r.professor.endsWith("*"))) {
+			System.out.println("* professor referenciado na disciplina não cadastrado na lista de professores");
+		}
+	}
+
+	public Individuo getMelhorSolucao() {
+		return melhorSolucao;
+	}
 }
