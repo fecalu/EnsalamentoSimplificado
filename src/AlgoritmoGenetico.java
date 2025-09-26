@@ -1,5 +1,10 @@
+import db.ConnectionDb;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.Temporal;
@@ -13,29 +18,33 @@ class AlgoritmoGenetico {
 
 	private int numSalas, numHorarios, numDias;
 
+	private final Connection connection = ConnectionDb.getConn();
+
 	// cache pra fitness/impressão
 	private Map<String, Professor> profByName;
-	
+
 	private double taxaElitismo; // Variável para elitismo
+
+	// <> NOVO: Contador de execuções da função objetivo como variável da classe.
+	private int numExecObjetiva = 0;
 
 
 	public AlgoritmoGenetico(int tamanhoPopulacao, double taxaMutacao, double taxaElitismo) {
-	    this.tamanhoPopulacao = tamanhoPopulacao;
-	    this.taxaMutacao = taxaMutacao;
-	    this.taxaElitismo = taxaElitismo; // Inicializando elitismo
-	    this.populacao = new ArrayList<>();
+		this.tamanhoPopulacao = tamanhoPopulacao;
+		this.taxaMutacao = taxaMutacao;
+		this.taxaElitismo = taxaElitismo; // Inicializando elitismo
+		this.populacao = new ArrayList<>();
 	}
 
-	
-	
-	
-	
 	public void resolve(int numeroGeracoes, List<Disciplina> disciplinas, List<Professor> professores, List<Sala> salas,
-		
-			int numHorarios, int numDias) {
-		
+
+						int numHorarios, int numDias) {
+
+		// <> NOVO: Zera o contador no início de cada resolução.
+		this.numExecObjetiva = 0;
+
 		Instant agora = Instant.now();
-		
+
 		this.numSalas = salas.size();
 		this.numHorarios = numHorarios;
 		this.numDias = numDias;
@@ -45,9 +54,7 @@ class AlgoritmoGenetico {
 		for (Professor p : professores) {
 			this.profByName.put(p.getNome(), p);
 		}
-		
-		
-		
+
 		int totalAulas = 0;
 		for (Disciplina d : disciplinas)
 			totalAulas += d.getNumeroAulasPorSemana();
@@ -56,55 +63,76 @@ class AlgoritmoGenetico {
 
 		List<String> historico = new ArrayList<>();
 
-		 for (int g = 0; g < numeroGeracoes; g++) {
-		        List<Individuo> novaPopulacao = new ArrayList<>();
+		for (int g = 0; g < numeroGeracoes; g++) {
+			List<Individuo> novaPopulacao = new ArrayList<>();
 
-		        // Adiciona o elitismo: calcula o número de indivíduos elitistas com base na taxa
-		        int elitismoCount = (int) (tamanhoPopulacao * taxaElitismo);
-		        for (int i = 0; i < elitismoCount; i++) {
-		            novaPopulacao.add(new Individuo(populacao.get(i))); // Mantém as melhores soluções
-		        }
+			// Adiciona o elitismo: calcula o número de indivíduos elitistas com base na taxa
+			int elitismoCount = (int) (tamanhoPopulacao * taxaElitismo);
+			for (int i = 0; i < elitismoCount; i++) {
+				novaPopulacao.add(new Individuo(populacao.get(i))); // Mantém as melhores soluções
+			}
 
-		        // Preenche o restante da população
-		        while (novaPopulacao.size() < tamanhoPopulacao) {
-		            Individuo pai1 = torneio();
-		            Individuo pai2 = torneio();
-		            Individuo filho = crossover(pai1, pai2);
-		            mutacao(filho);
-		            filho.calcularFitness(disciplinas, profByName, salas);
-		            novaPopulacao.add(filho);
-		        }
+			// Preenche o restante da população
+			while (novaPopulacao.size() < tamanhoPopulacao) {
+				Individuo pai1 = torneio();
+				Individuo pai2 = torneio();
+				Individuo filho = crossover(pai1, pai2);
+				mutacao(filho);
+				filho.calcularFitness(disciplinas, profByName, salas);
+				this.numExecObjetiva++; // <> ALTERAÇÃO: Incrementa o contador aqui.
+				novaPopulacao.add(filho);
+			}
 
-		        // Atualiza a população com a nova geração
-		        populacao = novaPopulacao;
-		        populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
+			// Atualiza a população com a nova geração
+			populacao = novaPopulacao;
+			populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
 
-		        // Atualiza a melhor solução
-		        if (populacao.get(0).getFitness() < melhorSolucao.getFitness()) {
-		            melhorSolucao = populacao.get(0);
-		        }
+			// Atualiza a melhor solução
+			if (populacao.get(0).getFitness() < melhorSolucao.getFitness()) {
+				melhorSolucao = populacao.get(0);
+			}
 
-		        historico.add("Geração " + (g + 1) + ": Fitness: " + melhorSolucao.getFitness());
-		    }
+			historico.add("Geração " + (g + 1) + ": Fitness: " + melhorSolucao.getFitness());
+
+			// numExecObjetiva += 1; // <> REMOVIDO: Linha antiga que contava errado.
+		}
 
 		System.out.println("Histórico das soluções:");
 		historico.forEach(System.out::println);
 
 		System.out.println("\nMelhor solução final encontrada:");
 		imprimirGrade(melhorSolucao, disciplinas, salas);
-		System.out.println("Número de conflitos: " + melhorSolucao.getFitness());
-		
-        // Captura o tempo final após a execução do algoritmo
-        Instant tempoFinal = Instant.now();
+		System.out.println("Número de conflitos: " + melhorSolucao.getFitness()); // FITNESS
 
-        // Calcula a duração entre o tempo inicial e o tempo final
-        Duration duracao = Duration.between(agora, tempoFinal);
+		// Captura o tempo final após a execução do algoritmo
+		Instant tempoFinal = Instant.now();
 
+		// Calcula a duração entre o tempo inicial e o tempo final
+		Duration duracao = Duration.between(agora, tempoFinal);
+
+		// TEMPO
 		double tempoQuebrado = duracao.toMillis() / 1000.0;
 
-        // Exibe a duração total de execução em milissegundos
-        System.out.println("Duração: " + duracao.getSeconds() + " segundos");
-        System.out.println("Duração em segundos quebrados: " + BigDecimal.valueOf(tempoQuebrado).setScale(2, RoundingMode.HALF_UP) + " segundos");
+		// <> ATENÇÃO: Verifique se o nome da tabela está correto. Na query antiga era "testes_algoritmos_1"
+		String sql = "INSERT INTO testes_algoritmos_1 (nome_instancia, fitness_ag_java, tempo_ag_java, melhor_individuo_java, num_exec_objetiva) VALUES (?, ?, ?, ?, ?)";
+
+		try(PreparedStatement stmt = connection.prepareStatement(sql)){
+			stmt.setString(1, "Cenário 1");
+			stmt.setDouble(2, melhorSolucao.getFitness());
+			stmt.setDouble(3, BigDecimal.valueOf(tempoQuebrado).setScale(2, RoundingMode.HALF_UP).doubleValue());
+			stmt.setString(4, Arrays.toString(melhorSolucao.getSolucao()));
+			stmt.setInt(5, this.numExecObjetiva); // <> ALTERAÇÃO: Usa o contador correto da classe.
+
+			stmt.executeUpdate();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		}
+
+		// Exibe a duração total de execução em milissegundos
+		System.out.println("Duração: " + duracao.getSeconds() + " segundos");
+		System.out.println("Duração em segundos quebrados: " + BigDecimal.valueOf(tempoQuebrado).setScale(2, RoundingMode.HALF_UP) + " segundos");
+		// <> NOVO: Imprime o número correto de execuções.
+		System.out.println("Total de execuções da função objetivo: " + this.numExecObjetiva);
 	}
 
 	private void inicializaPopulacao(int totalAulas, List<Disciplina> disciplinas, List<Sala> salas) {
@@ -112,6 +140,7 @@ class AlgoritmoGenetico {
 		for (int i = 0; i < tamanhoPopulacao; i++) {
 			Individuo ind = new Individuo(totalAulas, numSalas, numHorarios, numDias);
 			ind.calcularFitness(disciplinas, profByName, salas);
+			this.numExecObjetiva++; // <> ALTERAÇÃO: Incrementa o contador aqui também.
 			populacao.add(ind);
 		}
 		populacao.sort(Comparator.comparingDouble(Individuo::getFitness));
